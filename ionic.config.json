@@ -1,0 +1,7 @@
+{
+  "name": "health02",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
