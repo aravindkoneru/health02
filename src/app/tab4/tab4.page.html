@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Charts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label>Chart Type</ion-label>
+            <ion-select placeholder="Overview" interface="popover">
+                <ion-select-option value="Overview">Overview</ion-select-option>
+                <ion-select-option value="Diet">Diet</ion-select-option>
+                <ion-select-option value="Fitness">Fitness</ion-select-option>
+            </ion-select>
+
+        </ion-item>
+
+    </ion-list>
+
+    <div class="ion-padding">
+        <ion-card>
+            <ion-card-header>
+                Calorie Intake
+            </ion-card-header>
+            <ion-card-content>
+                <canvas #calorieCanvas></canvas>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-header>
+                Protein Intake 
+            </ion-card-header>
+            <ion-card-content>
+                <canvas #proteinCanvas></canvas>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-header>
+                Nutritional breakdown 
+            </ion-card-header>
+            <ion-card-content>
+                <canvas #nutritionCanvas></canvas>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>
