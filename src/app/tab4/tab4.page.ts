@@ -8,9 +8,9 @@ import { Chart } from 'chart.js';
     styleUrls: ['./tab4.page.scss'],
 })
 export class Tab4Page implements OnInit {
-    @ViewChild("calorieCanvas") calorieCanvas: ElementRef;
-    @ViewChild("proteinCanvas") proteinCanvas: ElementRef;
-    @ViewChild("nutritionCanvas") nutritionCanvas: ElementRef;
+    @ViewChild("calorieCanvas", {static: true}) calorieCanvas: ElementRef;
+    @ViewChild("proteinCanvas", {static: true}) proteinCanvas: ElementRef;
+    @ViewChild("nutritionCanvas", {static: true}) nutritionCanvas: ElementRef;
 
     private calorieBarChart: Chart;
     private proteinLineChart: Chart;
