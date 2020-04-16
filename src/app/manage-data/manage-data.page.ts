@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-manage-data',
-  templateUrl: './manage-data.page.html',
-  styleUrls: ['./manage-data.page.scss'],
+    selector: 'app-manage-data',
+    templateUrl: './manage-data.page.html',
+    styleUrls: ['./manage-data.page.scss'],
 })
 export class ManageDataPage implements OnInit {
 
-  constructor() { }
+    disable_cloud:boolean = true;
 
-  ngOnInit() {
-  }
+
+    constructor() { }
+
+    ngOnInit() {
+    }
+
+    changeCloudSettings() {
+        this.disable_cloud = !this.disable_cloud;
+        console.log("here")
+    }
+
+
 
 }

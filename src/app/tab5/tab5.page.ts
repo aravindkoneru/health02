@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-tab5',
@@ -9,7 +11,8 @@ import { AlertController } from '@ionic/angular';
 
 export class Tab5Page implements OnInit {
 
-  constructor(private alertController: AlertController) { }
+  constructor(private alertController: AlertController, 
+             private router: Router) { }
 
   async confirmLogout() {
     const alert = await this.alertController.create({
@@ -24,9 +27,7 @@ export class Tab5Page implements OnInit {
             {
                 text: "Yes",
                 handler: () => {
-                    //TODO: Who ever is doing the login screen needs to re-route
-                    // to the login screen.
-                    console.log("user wants to log out");
+                    this.router.navigate(['login/']);
                 }
             },
         

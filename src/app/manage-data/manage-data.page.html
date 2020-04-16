@@ -1,12 +1,51 @@
 <ion-header>
     <ion-toolbar>
         <ion-buttons slot="start">
-            <ion-back-button></ion-back-button>
+            <ion-back-button defaultHref="settings"></ion-back-button>
         </ion-buttons>
         <ion-title>Manage Data</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-list>
+        <ion-item-group>
+            <ion-item-divider>
+                <ion-label>General</ion-label>
+            </ion-item-divider>
 
+            <ion-item>
+                <ion-label>Share annonymous analytics</ion-label>
+                <ion-toggle></ion-toggle>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Share data with Android</ion-label>
+                <ion-toggle></ion-toggle>
+            </ion-item>
+
+            <ion-item-divider>
+                <ion-label>Cloud Services</ion-label>
+            </ion-item-divider>
+            <ion-item>
+                <ion-label>Save data to cloud</ion-label>
+                <ion-toggle (ionChange)="changeCloudSettings()"></ion-toggle>
+            </ion-item>
+
+            <ion-item [disabled]="disable_cloud">
+                <ion-label>Google Drive</ion-label>
+                <ion-toggle></ion-toggle>
+            </ion-item>
+
+            <ion-item [disabled]="disable_cloud">
+                <ion-label>Dropbox</ion-label>
+                <ion-toggle></ion-toggle>
+            </ion-item>
+
+            <ion-item [disabled]="disable_cloud">
+                <ion-label>Box</ion-label>
+                <ion-toggle></ion-toggle>
+            </ion-item>
+        </ion-item-group>
+    </ion-list>
 </ion-content>

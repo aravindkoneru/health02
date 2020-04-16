@@ -21,12 +21,24 @@ const routes: Routes = [
   {
     path: 'privacy-policy',
     loadChildren: () => import('./privacy-policy/privacy-policy.module').then( m => m.PrivacyPolicyPageModule)
+  },
+  {
+      path: 'settings',
+      redirectTo: 'tabs/tab5'
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'initial-collection',
+    loadChildren: () => import('./initial-collection/initial-collection.module').then( m => m.InitialCollectionPageModule)
   }
 ];
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
+    imports: [
+        RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    ],
+    exports: [RouterModule]
 })
 export class AppRoutingModule {}
