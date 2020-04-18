@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'initial-collection',
     loadChildren: () => import('./initial-collection/initial-collection.module').then( m => m.InitialCollectionPageModule)
+  },
+  {
+    path: 'intake-details',
+    loadChildren: () => import('./intake-details/intake-details.module').then( m => m.IntakeDetailsPageModule)
   }
 ];
 @NgModule({

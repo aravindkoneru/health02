@@ -1,48 +1,74 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Charts</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Charts</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-   
+
     <ion-list>
         <ion-item>
             <ion-label>Chart Type</ion-label>
-            <ion-select placeholder="Overview" interface="popover">
+            <ion-select value="Overview" interface="popover" [(ngModel)]="chart_type" (ionChange)="chartTypeSelected()">
                 <ion-select-option value="Overview">Overview</ion-select-option>
                 <ion-select-option value="Diet">Diet</ion-select-option>
                 <ion-select-option value="Fitness">Fitness</ion-select-option>
             </ion-select>
         </ion-item>
     </ion-list>
-    
 
     <div class="ion-padding">
-        <ion-card>
+        <ion-card *ngIf="show_diet_charts" button="true" (click)="showCalorieDetails()">
             <ion-card-header>
-                Calorie Intake
+                <ion-card-title>Calorie Intake</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-                <canvas #calorieCanvas></canvas>
+                <canvas #diet1></canvas>
             </ion-card-content>
         </ion-card>
 
-        <ion-card>
+        <ion-card *ngIf="show_diet_charts">
             <ion-card-header>
-                Protein Intake 
+                <ion-card-title>Protein Intake</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-                <canvas #proteinCanvas></canvas>
+                <canvas #diet2></canvas>
             </ion-card-content>
         </ion-card>
 
-        <ion-card>
+        <ion-card *ngIf="show_diet_charts">
             <ion-card-header>
-                Nutritional breakdown 
+                <ion-card-title>Nutritional breakdown</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-                <canvas #nutritionCanvas></canvas>
+                <canvas #diet3></canvas>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card *ngIf="show_fitness_charts">
+            <ion-card-header>
+                <ion-card-title>Sleep</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <canvas #fitness1></canvas>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card *ngIf="show_fitness_charts">
+            <ion-card-header>
+                <ion-card-title>Activity Log</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <canvas #fitness2></canvas>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card *ngIf="show_fitness_charts">
+            <ion-card-header>
+                <ion-card-title>Activity Breakdown</ion-card-title> 
+            </ion-card-header>
+            <ion-card-content>
+                <canvas #fitness3></canvas>
             </ion-card-content>
         </ion-card>
     </div>
