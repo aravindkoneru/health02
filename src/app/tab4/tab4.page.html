@@ -9,8 +9,7 @@
     <ion-list>
         <ion-item>
             <ion-label>Chart Type</ion-label>
-            <ion-select value="Overview" interface="popover" [(ngModel)]="chart_type" (ionChange)="chartTypeSelected()">
-                <ion-select-option value="Overview">Overview</ion-select-option>
+            <ion-select interface="popover" [(ngModel)]="chart_type" (ionChange)="chartTypeSelected()">
                 <ion-select-option value="Diet">Diet</ion-select-option>
                 <ion-select-option value="Fitness">Fitness</ion-select-option>
             </ion-select>

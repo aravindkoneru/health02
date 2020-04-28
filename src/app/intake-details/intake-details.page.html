@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar>
         <ion-buttons slot="start">
-            <ion-back-button defaultHref="tab/tab4"></ion-back-button>
+            <ion-back-button defaultHref="tabs/tab4"></ion-back-button>
         </ion-buttons>
         <ion-title>Calorie Intake Details</ion-title>
     </ion-toolbar>
@@ -11,10 +11,6 @@
     <div class="ion-padding">
         <ion-card>
             <ion-segment (ionChange)="newPeriod($event)" value="week">
-                <ion-segment-button value="day">
-                    <ion-label>D</ion-label>
-                </ion-segment-button>
-
                 <ion-segment-button value="week">
                     <ion-label>W</ion-label>
                 </ion-segment-button>
